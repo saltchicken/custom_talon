@@ -25,7 +25,7 @@ def _send_command_message_remote(command):
         server_address = ('192.168.1.11', 8000)
         print('Connecting to {} port {}'.format(*server_address))
         client_socket.connect(server_address)
-        data = {"type": "command", "message": 'interrupt'}
+        data = {"type": "command", "message": command}
         data_string = json.dumps(data)
         client_socket.sendall(data_string.encode())
     except:
